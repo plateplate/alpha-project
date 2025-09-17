@@ -1,40 +1,28 @@
-@import url('https://fonts.googleapis.com/css2?family=Playwrite+MX+Guides&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
-/* * {
-  border: solid 1px black; 
-} */
-
-h1 {
-  font-family: "Roboto", sans-serif
+:root {
+  --brand: #e91e63; /* pink */
+  --brand-700: #c2185b;
+  --brand-100: #fce4ec;
+  --ink: #111;
+  --paper: #fff;
+  --radius: 1rem;
 }
-
-/* ul {
-  list-style-type: none; 
-} */
-
- /* .customClass, #customClass */
-
-.myDivClass {
-
-  height: 50px; 
-  width: 50px; 
-  background-color: rgb(201, 150, 221);
-  border: dotted 2px rgb(63, 4, 40); 
-  margin-left: 12em; 
-  padding: 4px; 
-}
-/* === Advanced selectors & focus styles === */
-.navbar .nav-link:hover,
-.navbar .nav-link:focus-visible { text-decoration: underline; }
-
-/* sibling/child selector demo: space between card title and subtitle when adjacent */
+body { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif; color: var(--ink); background: var(--paper); }
+.bg-primary { background-color: var(--brand) !important; }
+.navbar-dark .navbar-brand, .navbar-dark .nav-link { color: #fff; }
+.navbar-dark .nav-link.active, .navbar-dark .nav-link:hover, .navbar-dark .nav-link:focus { text-decoration: underline; }
+.btn-primary { background-color: var(--brand); border-color: var(--brand); }
+.btn-primary:hover, .btn-primary:focus { background-color: var(--brand-700); border-color: var(--brand-700); }
+a { color: var(--brand-700); }
+a:hover, a:focus { color: var(--brand); }
+.card { border-radius: var(--radius); }
+.card[data-card="feature"] { border: 1px solid var(--brand-100); }
+/* Advanced selectors */
+.navbar .nav-link:focus-visible { outline: 2px solid #111; outline-offset: 2px; }
 .card > .card-body > .card-title + .card-subtitle { margin-top: .25rem; }
-
-/* attribute selector demo for any image whose alt contains 'wireframe' */
-img[alt~="wireframe"] { outline: 2px dashed currentColor; outline-offset: .25rem; }
-
-/* minimal theme toggle for the tiny interaction */
-body.theme-alt { background: #111; color: #f5f5f5; }
-body.theme-alt a { color: #ffd0f9; }
-body.theme-alt .card { background: #1b1b1b; color: #f0f0f0; }
-body.theme-alt .bg-light { background-color: #222222 !important; }
+[data-card="feature"] .card-body > .stretched-link { position: static; }
+/* Theme toggle */
+body.theme-alt { background: #0f0f12; color: #f5f5f7; }
+body.theme-alt .bg-light { background-color: #1f1f24 !important; }
+body.theme-alt a { color: #ffd1e1; }
+body.theme-alt .card { background: #1b1b20; color: #f5f5f7; }
