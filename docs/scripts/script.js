@@ -1,25 +1,11 @@
-document.addEventListener("DOMContentLoaded", () => {
-   console.log("document succesfully loaded, baby");
-   
-   document.getElementById('btnClicky').addEventListener('click', btnClicky); 
- }
-);
-
-function btnClicky () {
-  console.log('in btnClicky event');
-  document.getElementById('btnClicky').style.transform = 'rotate(15deg)'
-  console.log('after rotation');
-}
-
-
-// const btnClicky = document.getElementById('btnClicky'); btnClicky.addEventListener('click', () => { // ...now do DOM stuff });
-
+// Tiny interaction + console logs
 document.addEventListener('DOMContentLoaded', () => {
-  const themeBtn = document.getElementById('themeToggle');
-  if (themeBtn) {
-    themeBtn.addEventListener('click', () => {
+  console.log('DOM ready: new pink layout loaded');
+  const btn = document.getElementById('themeToggle');
+  if (btn) {
+    btn.addEventListener('click', () => {
       document.body.classList.toggle('theme-alt');
-      console.log('Theme toggled');
+      console.log('Theme toggled:', document.body.classList.contains('theme-alt') ? 'alt' : 'default');
     });
   }
 });
