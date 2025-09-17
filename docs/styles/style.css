@@ -1,28 +1,25 @@
-
-:root {
-  --brand: #e91e63; /* pink */
-  --brand-700: #c2185b;
-  --brand-100: #fce4ec;
-  --ink: #111;
-  --paper: #fff;
-  --radius: 1rem;
+:root{
+  --brand:#e91e63; --brand-700:#c2185b; --brand-100:#fce4ec;
+  --ink:#111; --paper:#fff; --radius:1rem; --focus-ring:2px solid #111;
 }
-body { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif; color: var(--ink); background: var(--paper); }
-.bg-primary { background-color: var(--brand) !important; }
-.navbar-dark .navbar-brand, .navbar-dark .nav-link { color: #fff; }
-.navbar-dark .nav-link.active, .navbar-dark .nav-link:hover, .navbar-dark .nav-link:focus { text-decoration: underline; }
-.btn-primary { background-color: var(--brand); border-color: var(--brand); }
-.btn-primary:hover, .btn-primary:focus { background-color: var(--brand-700); border-color: var(--brand-700); }
-a { color: var(--brand-700); }
-a:hover, a:focus { color: var(--brand); }
-.card { border-radius: var(--radius); }
-.card[data-card="feature"] { border: 1px solid var(--brand-100); }
+body{font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);background:var(--paper)}
+html{scroll-behavior:smooth}
+
+/* Brand overrides */
+.bg-primary{background-color:var(--brand)!important}
+.navbar-dark .nav-link, .navbar-dark .navbar-brand{color:#fff}
+.navbar-dark .nav-link.active, .navbar-dark .nav-link:hover, .navbar-dark .nav-link:focus{color:#fff;text-decoration:underline}
+a{color:var(--brand-700)} a:hover,a:focus{color:var(--brand)}
+
+.btn-primary{background-color:var(--brand);border-color:var(--brand)}
+.btn-primary:hover,.btn-primary:focus{background-color:var(--brand-700);border-color:var(--brand-700)}
+
 /* Advanced selectors */
-.navbar .nav-link:focus-visible { outline: 2px solid #111; outline-offset: 2px; }
-.card > .card-body > .card-title + .card-subtitle { margin-top: .25rem; }
-[data-card="feature"] .card-body > .stretched-link { position: static; }
+.navbar .nav-link:focus-visible{outline:var(--focus-ring);outline-offset:2px}
+.border.rounded-4 > h2 + p.text-muted{margin-top:.25rem}
+
 /* Theme toggle */
-body.theme-alt { background: #0f0f12; color: #f5f5f7; }
-body.theme-alt .bg-light { background-color: #1f1f24 !important; }
-body.theme-alt a { color: #ffd1e1; }
-body.theme-alt .card { background: #1b1b20; color: #f5f5f7; }
+body.theme-alt{background:#0f0f12;color:#f5f5f7}
+body.theme-alt .bg-light{background-color:#1f1f24!important}
+body.theme-alt a{color:#ffd1e1}
+body.theme-alt .border{border-color:#34343a!important}
